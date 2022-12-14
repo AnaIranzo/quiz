@@ -183,13 +183,22 @@ const quiz =
     document.querySelector('#form').innerHTML = imprimir + ` <input type="submit" id="btnsubmit">`
 
     document.querySelector('#form').addEventListener('submit',function (event,i) {
+            
         event.preventDefault()
-        
-        if (event.pregunta[i].name.value == respuestas.necronomicon) {
-            console.log('Primera correcta')
-        }
 
-        event.target.submit()
+        console.log(event)
+        //checked: true
+        /* if (event.target[2].checked == respuestas.necronomicon) {//true
+            console.log('correcto')
+        }
+        
+ */     
+        let selected = document.querySelector('input[name="necronomicon"]:checked')
+        if (selected.value == respuestas.necronomicon) {
+        console.log(selected.value);
+        
+    }
+        //event.target.submit()
 
     
         
