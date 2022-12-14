@@ -147,10 +147,8 @@ const quiz =
             name: 'copia',
 
     },
-]
-
+    ]
    
-    
 }
 
 
@@ -163,7 +161,7 @@ const quiz =
 
 
     function pintarPreguntas(pregunta, i) {
-        return ` <fieldset>
+        return ` <fieldset class='question'id='field${i}'>
         <legend>${pregunta[i].pregunta}</legend>
         <label for="${pregunta[i].a1}-field">${pregunta[i].a}</label>
         <input id="${pregunta[i].a1}-field" type="radio" name="${pregunta[i].name}" value="${pregunta[i].a1}">
@@ -182,7 +180,7 @@ const quiz =
 
     document.querySelector('#form').innerHTML = imprimir + ` <input type="submit" id="btnsubmit">`
 
-    document.querySelector('#form').addEventListener('submit',function (event,i) {
+    document.querySelector('#form').addEventListener('submit',function (event, preguntas) {
             
         event.preventDefault()
 
@@ -192,12 +190,25 @@ const quiz =
             console.log('correcto')
         }
         
- */     
+        */     
+        /*   let l = event.target.length/10
+        for (let i = 0; i < l; i++) {
+        let selected = document.querySelector(`input[name="${preguntas.name}"]:checked`)
+        if (selected.value == respuestas.necronomicon) {
+        console.log(selected[i].value);
+        
+        }
+    
+        }   */
         let selected = document.querySelector('input[name="necronomicon"]:checked')
         if (selected.value == respuestas.necronomicon) {
-        console.log(selected.value);
+            console.log(selected.value);
+            document.querySelector('#field0').style.backgroundColor = 'rgb(134, 218, 134)'
         
-    }
+      
+        }else{
+            document.querySelector('#field0').style.backgroundColor = 'rgb(192, 65, 10)'
+        } 
         //event.target.submit()
 
     
