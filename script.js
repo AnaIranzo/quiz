@@ -1,12 +1,12 @@
 
-const respuestas = {
+/* const respuestas = {
     necronomicon: 'arab',
     nyarlathotep: 'egyptian',
     whateley: 'sothoth',
     dunwich: 'brother',
     god: 'azathoth',
     copia: 'miskatonic'
-}
+} */
 
 const quiz = 
 { preguntas: [
@@ -161,12 +161,12 @@ const quiz =
 
     let imprimir = ''
     for (let i = 0; i < quiz.preguntas.length; i++) {
-        imprimir += pintarPreguntas(quiz.preguntas, i) 
+        imprimir += pintarPregunta(quiz.preguntas, i) 
         
     }
 
 
-    function pintarPreguntas(pregunta, i) {
+    function pintarPregunta(pregunta, i) {
         return ` <fieldset class='question'id='field${i}'>
         <legend>${pregunta[i].pregunta}</legend>
         <label for="${pregunta[i].a1}-field">${pregunta[i].a}</label>
@@ -184,9 +184,12 @@ const quiz =
     
     }
 
-    document.querySelector('#form').innerHTML = imprimir + ` <input type="submit" id="btnsubmit">`
-
-    document.querySelector('#form').addEventListener('submit',function (event) {
+    document.querySelector('#form_hpl').innerHTML = imprimir //+ `<input type="submit" id="btnsubmit">`
+    let newButtom = document.createElement('input')
+    newButtom.setAttribute('type','submit')
+    newButtom.setAttribute('id','btnsubmit')
+    document.querySelector('#form_hpl').appendChild(newButtom)
+    document.querySelector('#form_hpl').addEventListener('submit',function (event) {
             
         event.preventDefault()
 
@@ -200,14 +203,17 @@ const quiz =
             
             for (let i = 0; i < quiz.preguntas.length; i++) {
                 let selected = document.querySelector(`input[name="${[i]}"]:checked`)
-                console.log('selected.val '+selected.value);
-                if (selected.value == quiz.preguntas[i].correcta) {
+                //console.log('selected.val '+selected.value);
+                if (!selected){
+                    alert('Selecciona una opción')
+                    break
+                }else if (selected.value == quiz.preguntas[i].correcta) {
                     document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(134, 218, 134)'
                     
                 }else{
-                     document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(192, 65, 10)'
-                    
-                }
+                    document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(192, 65, 10)'
+                   
+               }
                     
                 
             }   
