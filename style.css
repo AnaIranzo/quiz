@@ -2,15 +2,18 @@
 h1{
     font-family: 'Rubik 80s Fade', cursive;
     color: rgb(70, 88, 70);
+    margin-left: 20px;
 }
 
 legend{
-    font-weight: bold;
+    font-family: 'Arima Madurai';
+    font-weight: 900;
 }
 
 #form_hpl{
     display: flex;
     flex-direction: column;
+    gap: 5px;
 }
 
 .question{
@@ -30,13 +33,14 @@ legend{
 
 #btnsubmit{
     top:50%;
-    background-color:#0a0a23;
+    background-color:rgb(70, 88, 70);
     color: #fff;
     border:none; 
     border-radius:10px; 
     padding:15px;
     min-height:30px; 
     min-width: 120px;
+    margin-left: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -52,8 +56,22 @@ legend{
     width: 300px;
    }
 
+   h1{
+    margin-left: 40px;
+   }
+
 }
 
 @media screen and (min-width: 1366px) {
-   
+    .question{
+        width: 550px;
+        margin-right: 10px;
+        justify-content: space-around;
+       }
+
+    #btnsubmit{
+        max-height: 50px;
+        margin-top: 90px;
+        min-width: 0px;
+    }
 }
