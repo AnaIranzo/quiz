@@ -73,15 +73,17 @@ legend{
 }
 
 @media screen and (min-width: 1366px) {
+    
     .question{
         width: 550px;
         margin-right: 10px;
         justify-content: space-around;
        }
-
+   
     #btnsubmit{
         max-height: 50px;
-        margin-top: 90px;
+        align-self: center;
         min-width: 0px;
+        
     }
 }
