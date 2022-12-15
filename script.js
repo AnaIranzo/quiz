@@ -138,7 +138,7 @@ const quiz =
             c1: 'rlyeh',
             d: 'Las montañas de la locura',
             d1: 'madness',
-            correcta: 'yuggoth',
+            correcta: 'rlyeh',
 
     },
 
@@ -152,7 +152,7 @@ const quiz =
             c1: 'xexanoth',
             d: "C'thalpa",
             d1: 'cthalpa',
-            correcta: 'rlyeh',
+            correcta: 'niggurath',
 
     }, 
     ]
