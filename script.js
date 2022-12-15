@@ -97,66 +97,67 @@ const quiz =
        
 
     },
-/* 
+ 
     {
-            pregunta: '¿De dónde intenta obtener Wilbur una copia del Necronomicon?',//
-            a: 'Arkham Asylum',
-            a1: 'arkham',
-            b: 'Universidad de Yale',
-            b1: 'yale',
-            c: 'Universidad de Miskatonic',
-            c1: 'yale',
-            d: 'La casa de la bruja',
-            d1: 'witch',
+            pregunta: '¿Como se llaman los nativos de Innsmouth que adoran a Dagon?',//
+            a: 'Ichthyo sapiens',
+            a1: 'ichthyo',
+            b: 'Los ahogados',
+            b1: 'ahogado',
+            c: 'Los profundos',
+            c1: 'deep',
+            d: 'Dagons',
+            d1: 'dagon',
+            correcta: 'deep',
            
 
     },
 
     {
-            pregunta: '¿De dónde intenta obtener Wilbur una copia del Necronomicon?',
-            a: 'Arkham Asylum',
-            a1: 'arkham',
-            b: 'Universidad de Yale',
-            b1: 'yale',
-            c: 'Universidad de Miskatonic',
-            c1: 'yale',
-            d: 'La casa de la bruja',
-            d1: 'witch',
+            pregunta: '¿De qué planeta viene Mi-go?',
+            a: 'La Tierra',
+            a1: 'tierra',
+            b: 'Yuggoth',
+            b1: 'yuggoth',
+            c: 'Marte',
+            c1: 'marte',
+            d: 'Carcosa',
+            d1: 'carcosa',
+            correcta: 'yuggoth',
             
 
     },
 
     {
-            pregunta: '¿De dónde intenta obtener Wilbur una copia del Necronomicon?',
-            a: 'Arkham Asylum',
-            a1: 'arkham',
-            b: 'Universidad de Yale',
-            b1: 'yale',
-            c: 'Universidad de Miskatonic',
-            c1: 'yale',
-            d: 'La casa de la bruja',
-            d1: 'witch',
-           
+            pregunta: '¿Dónde está encerrado Cthulhu?',
+            a: 'Leng',
+            a1: 'Leng',
+            b: 'Las tierras del sueño',
+            b1: 'dream',
+            c: "R'lyeh",
+            c1: 'rlyeh',
+            d: 'Las montañas de la locura',
+            d1: 'madness',
+            correcta: 'yuggoth',
 
     },
 
     {
-            pregunta: '¿De dónde intenta obtener Wilbur una copia del Necronomicon?',
-            a: 'Arkham Asylum',
-            a1: 'arkham',
-            b: 'Universidad de Yale',
-            b1: 'yale',
-            c: 'Universidad de Miskatonic',
-            c1: 'yale',
-            d: 'La casa de la bruja',
-            d1: 'witch',
-            
+            pregunta: '¿Quién es la Cabra negra de los bosques?',
+            a: 'Shub-Niggurath',
+            a1: 'niggurath',
+            b: 'La mascota de Cthulhu',
+            b1: 'pet',
+            c: 'Xexanoth',
+            c1: 'xexanoth',
+            d: "C'thalpa",
+            d1: 'cthalpa',
+            correcta: 'rlyeh',
 
-    }, */
+    }, 
     ]
    
 }
-
 
 
     let imprimir = ''
@@ -194,12 +195,7 @@ const quiz =
         event.preventDefault()
 
         console.log(event)
-        //checked: true
-        /* if (event.target[2].checked == respuestas.necronomicon) {//true
-            console.log('correcto')
-        }
-        
-        */    
+       
             
             for (let i = 0; i < quiz.preguntas.length; i++) {
                 let selected = document.querySelector(`input[name="${[i]}"]:checked`)
@@ -208,10 +204,10 @@ const quiz =
                     alert('Selecciona una opción')
                     break
                 }else if (selected.value == quiz.preguntas[i].correcta) {
-                    document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(134, 218, 134)'
+                    document.querySelector(`#field${[i]}`).style.backgroundColor = '#CBEFB6'
                     
                 }else{
-                    document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(192, 65, 10)'
+                    document.querySelector(`#field${[i]}`).style.backgroundColor = '#FE5F55'
                    
                }
                     
