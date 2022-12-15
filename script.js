@@ -20,7 +20,8 @@ const quiz =
         c1: 'yog',
         d: 'H. P. Lovecraft',
         d1: 'lovecraft',
-        name: 'necronomicon',
+        correcta: 'arab',
+       
 
     },
     {
@@ -33,7 +34,8 @@ const quiz =
         c1: 'force',
         d: 'El color fuera del espacio',
         d1: 'colour',
-        name: 'nyarlathotep',
+        correcta: 'egyptian',
+       
 
     },
     {
@@ -46,7 +48,8 @@ const quiz =
         c1: 'ward',
         d: 'Cthulhu',
         d1: 'cthulhu',
-        name: 'whateley',
+        correcta: 'sothoth',
+       
 
     },
 
@@ -60,7 +63,8 @@ const quiz =
         c1: 'father',
         d: 'Es su madre',
         d1: 'mother',
-        name: 'dunwich',
+        correcta: 'brother',
+        
 
     },
 
@@ -74,7 +78,8 @@ const quiz =
         c1: 'cthulhu2',
         d: 'Shub-Niggurath',
         d1: 'shub',
-        name: 'god',
+        correcta: 'azathoth',
+        
 
     },
 
@@ -85,13 +90,14 @@ const quiz =
         b: 'Universidad de Yale',
         b1: 'yale',
         c: 'Universidad de Miskatonic',
-        c1: 'yale',
+        c1: 'miskatonic',
         d: 'La casa de la bruja',
         d1: 'witch',
-        name: 'copia',
+        correcta: 'miskatonic',
+       
 
     },
-
+/* 
     {
             pregunta: '¿De dónde intenta obtener Wilbur una copia del Necronomicon?',//
             a: 'Arkham Asylum',
@@ -102,7 +108,7 @@ const quiz =
             c1: 'yale',
             d: 'La casa de la bruja',
             d1: 'witch',
-            name: 'copia',
+           
 
     },
 
@@ -116,7 +122,7 @@ const quiz =
             c1: 'yale',
             d: 'La casa de la bruja',
             d1: 'witch',
-            name: 'copia',
+            
 
     },
 
@@ -130,7 +136,7 @@ const quiz =
             c1: 'yale',
             d: 'La casa de la bruja',
             d1: 'witch',
-            name: 'copia',
+           
 
     },
 
@@ -144,9 +150,9 @@ const quiz =
             c1: 'yale',
             d: 'La casa de la bruja',
             d1: 'witch',
-            name: 'copia',
+            
 
-    },
+    }, */
     ]
    
 }
@@ -164,23 +170,23 @@ const quiz =
         return ` <fieldset class='question'id='field${i}'>
         <legend>${pregunta[i].pregunta}</legend>
         <label for="${pregunta[i].a1}-field">${pregunta[i].a}</label>
-        <input id="${pregunta[i].a1}-field" type="radio" name="${pregunta[i].name}" value="${pregunta[i].a1}">
+        <input id="${pregunta[i].a1}-field" type="radio" name="${[i]}" value="${pregunta[i].a1}">
   
         <label for="${pregunta[i].b1}-field">${pregunta[i].b}</label>
-        <input id="${pregunta[i].b1}-field" type="radio" name="${pregunta[i].name}" value="${pregunta[i].b1}">
+        <input id="${pregunta[i].b1}-field" type="radio" name="${[i]}" value="${pregunta[i].b1}">
   
         <label for="${pregunta[i].c1}-field">${pregunta[i].c}</label>
-        <input id="${pregunta[i].c1}-field" type="radio" name="${pregunta[i].name}" value="${pregunta[i].c1}">
+        <input id="${pregunta[i].c1}-field" type="radio" name="${[i]}" value="${pregunta[i].c1}">
   
         <label for="${pregunta[i].d1}-field">${pregunta[i].d}</label>
-        <input id="${pregunta[i].d1}-field" type="radio" name="${pregunta[i].name}" value="${pregunta[i].d1}">
+        <input id="${pregunta[i].d1}-field" type="radio" name="${[i]}" value="${pregunta[i].d1}">
       </fieldset>`
     
     }
 
     document.querySelector('#form').innerHTML = imprimir + ` <input type="submit" id="btnsubmit">`
 
-    document.querySelector('#form').addEventListener('submit',function (event, preguntas) {
+    document.querySelector('#form').addEventListener('submit',function (event) {
             
         event.preventDefault()
 
@@ -190,27 +196,34 @@ const quiz =
             console.log('correcto')
         }
         
-        */     
-        /*   let l = event.target.length/10
-        for (let i = 0; i < l; i++) {
-        let selected = document.querySelector(`input[name="${preguntas.name}"]:checked`)
-        if (selected.value == respuestas.necronomicon) {
-        console.log(selected[i].value);
+        */    
+            
+            for (let i = 0; i < quiz.preguntas.length; i++) {
+                let selected = document.querySelector(`input[name="${[i]}"]:checked`)
+                console.log('selected.val '+selected.value);
+                if (selected.value == quiz.preguntas[i].correcta) {
+                    document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(134, 218, 134)'
+                    
+                }else{
+                     document.querySelector(`#field${[i]}`).style.backgroundColor = 'rgb(192, 65, 10)'
+                    
+                }
+                    
+                
+            }   
         
-        }
-    
-        }   */
+        /*
         let selected = document.querySelector('input[name="necronomicon"]:checked')
         if (selected.value == respuestas.necronomicon) {
-            console.log(selected.value);
+            console.log(selected.value)
             document.querySelector('#field0').style.backgroundColor = 'rgb(134, 218, 134)'
         
       
         }else{
             document.querySelector('#field0').style.backgroundColor = 'rgb(192, 65, 10)'
         } 
-        //event.target.submit()
+        //event.target.submit()*/
 
-    
+        
         
     })
