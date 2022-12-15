@@ -1,0 +1,87 @@
+
+h1{
+    font-family: 'Rubik 80s Fade', cursive;
+    color: rgb(70, 88, 70);
+    margin-left: 20px;
+}
+
+legend{
+    font-family: 'Arima Madurai';
+    font-weight: 900;
+}
+
+#icons{
+    display: flex;
+    flex-direction: row;
+    
+}
+#logo {
+    width: 100px;
+    height:100px;
+}
+
+#form_hpl{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.question{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    width: 90%;
+    accent-color: black;
+    background-color: #f4f1ed;
+    color: rgb(52, 4, 4);
+    border-color: darkgoldenrod;
+    border: 9px groove (internal value);
+    border-radius: 7px;
+    width: 400px;
+    font-family: 'Arima Madurai', cursive;
+}
+
+#btnsubmit{
+    top:50%;
+    background-color:rgb(70, 88, 70);
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    margin-left: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    #form_hpl{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+   
+    .question{
+    width: 300px;
+   }
+
+   h1{
+    margin-left: 40px;
+   }
+
+}
+
+@media screen and (min-width: 1366px) {
+    .question{
+        width: 550px;
+        margin-right: 10px;
+        justify-content: space-around;
+       }
+
+    #btnsubmit{
+        max-height: 50px;
+        margin-top: 90px;
+        min-width: 0px;
+    }
+}
