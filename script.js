@@ -209,7 +209,7 @@ const quiz =
                 }else{
                     document.querySelector(`#field${[i]}`).style.backgroundColor = '#FE5F55'
                    
-               }
+                }
                     
                 
             }   
