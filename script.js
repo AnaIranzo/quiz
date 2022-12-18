@@ -196,7 +196,7 @@ const quiz =
 
         console.log(event)
        
-            
+            let counter = 0
             for (let i = 0; i < quiz.preguntas.length; i++) {
                 let selected = document.querySelector(`input[name="${[i]}"]:checked`)
                 //console.log('selected.val '+selected.value);
@@ -205,6 +205,7 @@ const quiz =
                     break
                 }else if (selected.value == quiz.preguntas[i].correcta) {
                     document.querySelector(`#field${[i]}`).style.backgroundColor = '#CBEFB6'
+                    counter ++
                     
                 }else{
                     document.querySelector(`#field${[i]}`).style.backgroundColor = '#FE5F55'
@@ -213,6 +214,15 @@ const quiz =
                     
                 
             }   
+
+            console.log(counter)
+
+            if (counter === 10) {
+                let img = document.createElement('img');
+                img.src = 'assets/giphy.gif';
+                img.className = "congrats";
+                document.querySelector('#form_hpl').append(img)
+            }
         
         /*
         let selected = document.querySelector('input[name="necronomicon"]:checked')

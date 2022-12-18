@@ -23,7 +23,9 @@ legend{
 #form_hpl{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
+    margin-left: 10px;
 }
 
 .question{
@@ -51,6 +53,17 @@ legend{
     min-height:30px; 
     min-width: 100px;
    
+}
+
+#btnsubmit:hover{
+    background-color:rgb(35, 195, 35);
+}
+
+
+.congrats{
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 30px;
 }
 
 @media screen and (min-width: 768px) {
